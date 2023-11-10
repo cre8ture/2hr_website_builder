@@ -1,0 +1,159 @@
+:root {
+  font-family: monospace;
+  line-height: 1.6;
+  font-size: 16px;
+}
+/* HTMLWidget.css */
+.widget {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* HTMLWidget.css */
+.popup {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 2; /* Increase the z-index to make popups appear above buttons */
+  white-space: nowrap;
+  top: 50%; /* Position vertically in the middle of the screen */
+  left: 50%; /* Position horizontally in the middle of the screen */
+  transform: translate(-50%, -50%); /* Center the popup */
+  display: none;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.popup {
+  display: none;
+}
+
+button:hover + .popup {
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* TopNavbar.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Updated menu icon styles */
+.menu-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.menu-icon.active {
+  display: none; /* Hide the burger icon when the dropdown is active */
+}
+/* Updated dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 60px; /* Adjust this value as needed to position the dropdown below the menu icon */
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1001;
+  display: none; /* Hide the dropdown by default */
+}
+
+/* Show the dropdown when active */
+.dropdown.active {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+
+  /* Updated menu icon styles for small screens */
+  .menu-icon {
+    display: block;
+    order: 2; /* Place the burger icon at the end on small screens */
+  }
+
+  .dropdown {
+    top: 70px;
+  }
+
+  .dropdown.active {
+    display: block;
+  }
+}
+/* Main page  */
+* {
+  box-sizing: border-box;
+}
+
+.editor {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 0 50%;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .item {
+    flex: 1 0 100%;
+  }
+}
