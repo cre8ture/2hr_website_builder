@@ -101,13 +101,13 @@ const TopNavbar = () => {
           ☰
         </div>
         <div className={`dropdown ${isDropdownOpen ? "active" : ""}`}>
-          <a href="#" className="dropdown-item" onClick={downloadHtmlFile}>
+          <a href="/" className="dropdown-item" onClick={downloadHtmlFile}>
             Download
           </a>
-          <a href="#" className="dropdown-item" onClick={biggerText}>
+          <a href="/" className="dropdown-item" onClick={biggerText}>
             Bigger text
           </a>
-          <a href="#" className="dropdown-item" onClick={smallerText}>
+          <a href="/" className="dropdown-item" onClick={smallerText}>
             Smaller text
           </a>
         </div>
