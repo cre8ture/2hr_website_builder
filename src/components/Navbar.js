@@ -7,9 +7,10 @@ const TopNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState("My Website");
-  const { code, setCode } = useContext(CodeContext);
+  const { code } = useContext(CodeContext);
   // Retrieve the HTML code from the Redux store
   // const htmlCode = useSelector((state) => state.htmlCodeReducer.htmlCode);
+
 
   const downloadHtmlFile = () => {
     const blob = new Blob([code], { type: "text/html" });

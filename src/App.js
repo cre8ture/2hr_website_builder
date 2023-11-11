@@ -25,7 +25,7 @@ export default function App() {
     }
   }, []);
 
-  
+
   // Use useEffect to watch for changes in the code state
   useEffect(() => {
     // Update the HTML content in response to code changes
@@ -33,7 +33,7 @@ export default function App() {
     if (livePreviewElement) {
       livePreviewElement.innerHTML = code;
     }
-  }, []);
+  }, [code]);
 
   
 
