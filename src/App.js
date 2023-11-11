@@ -14,9 +14,18 @@ import "./styles.css";
 
 export default function App() {
   const [code, setCode] = useState( loadFromLocal() ||
-    "<div> <h3> hello world </h3> <p> Edit Me! </p> <div>y"
+    "<div> <h3> hello world </h3> <p> Edit Me! </p> <div>"
   ); // Initialize code state with an empty string
   const [htmlWidget, getWidget] = useState("");
+
+  useEffect(() => {
+    const localCode = loadFromLocal();
+    if (localCode) {
+      setCode(localCode);
+    }
+  }, []);
+
+  
   // Use useEffect to watch for changes in the code state
   useEffect(() => {
     // Update the HTML content in response to code changes
@@ -25,6 +34,8 @@ export default function App() {
       livePreviewElement.innerHTML = code;
     }
   }, []);
+
+  
 
   return (
       <CodeContext.Provider value={{ code, setCode }}>
